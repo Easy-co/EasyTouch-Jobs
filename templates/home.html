@@ -43,19 +43,28 @@
     </style>
 </head>
 <body>
+    {% include 'nav.html' %}
     <header>
         <h1 class="text-align">Welcome to {{company_name}} Courses</h1>
         <img id="banner" class="img-fluid banner" src="static/burner.jpg" height="320">
         
     </header>
 
-    <main>
-   
+    <div class="container-fluid">
+   <h1 class="text-center">About Us</h1>
+    <div class="row" style="margin-bottom:16px">
+                 <div class= "col-md-6">
+                  <p class="lead">
+                              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                  </p>
+                 </div>
 
-        <section>
-      
-        </section>
-
+                <div class="d-none d-md-block col-md-6">
+                   <img src="/static/people.jpg" style ="height:320px; border-radius:4px;" > 
+                </div>
+                    
+       
+     </div>
         <section>
             <h2 class="text-align mt-2 mb-4">Opening Positions</h2>
             <p>
@@ -65,13 +74,11 @@
             </p>
             
           <div style="text-align:center;">
-                <button class="btn btn-primary btn-lg">Contact US</button>
+                <a href="mailto:esmanmudimu@gmail.com?subject=Questions%20about%20Job%20Openings&body=My%20name%3A%20%3Cyour%20name%20here%3E%0D%0A%0D%0AMy%20questions%3A%20%3Cyour%20question%20here%3E" class="btn btn-primary btn-lg">Contact US</a>
           </div>
         </section>
-    </main>
+    </div>
 
-    <footer>
-        <p>&copy; 2024 My Website. All rights reserved.</p>
-    </footer>
+   {% include('footer.html')%}
 </body>
 </html>
