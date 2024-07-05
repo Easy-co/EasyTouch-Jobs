@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <title>My Courses</title>
     <style>
         h1    {
@@ -27,11 +30,12 @@
             font-family:Roboto;
             color:rgb(80,80,80);
          }
-        #container{
+         #container{
             max-width:720px;
             margin-left:0 auto 0 auto;
             
         }
+        
         .bodytext{
             font-family:Roboto;
             color:rgb(80,80,80);
@@ -40,31 +44,35 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to My Courses</h1>
-        <img  id="banner" src="static/burner.jpg" height="320">
+        <h1 class="text-align">Welcome to {{company_name}} Courses</h1>
+        <img id="banner" class="img-fluid banner" src="static/burner.jpg" height="320">
         
     </header>
 
     <main>
         <section>
-            <h2>About Us</h2>
+            <h2 class="text-align">About Us</h2>
             <p>Provide a brief introduction to your website and organization.</p>
         </section>
 
         <section>
        <div id="container"> 
-           <p class="bodytext">
+           <p class="lead mt-2 mb-4">
                   Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
               </p>
        </div>    
         </section>
 
         <section>
-            <h2>Open Positions</h2>
-            <p>TODO - Show the positions available for hiring.</p>
+            <h2 class="text-align mt-2 mb-4">Open Positions</h2>
+            <p>
+                {% for job in jobs %}
+                    {% include 'jobitem.html' %}
+                {% endfor %}
+            </p>
             
           <div style="text-align:center;">
-                <button>Contact US</button>
+                <button class="btn btn-primary btn-lg">Contact US</button>
           </div>
         </section>
     </main>
